@@ -6,7 +6,7 @@ package main.java;
 public class ProductExceptAtIndex {
 
     public static void main(String[] args) {
-        int[] arr = new int[] {1,7,3,4};
+        int[] arr = new int[] {1,7,0,4};
         int[] result = getProductsOfAllIntsExceptAtIndex(arr);
         printArray(result);
     }
