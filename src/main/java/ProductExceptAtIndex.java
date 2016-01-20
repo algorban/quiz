@@ -2,11 +2,14 @@ package main.java;
 
 /**
  * Created by root on 1/14/2016.
+ *
+ * for the given array return new array which consist of products of all elements except at index
+ * {1,7,3,4} -> {84,12,28,21}
  */
 public class ProductExceptAtIndex {
 
     public static void main(String[] args) {
-        int[] arr = new int[] {1,7,0,4};
+        int[] arr = new int[] {1,7,3,4};
         int[] result = getProductsOfAllIntsExceptAtIndex(arr);
         printArray(result);
     }
