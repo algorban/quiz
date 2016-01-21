@@ -34,8 +34,8 @@ public class MeetingTimes {
             this.endTime   = endTime;
         }
 
-        public Meeting join(Meeting that) {
-            return new Meeting(this.startTime, that.endTime);
+        public void join(Meeting that) {
+            this.endTime = that.endTime;
         }
 
         public String toString() {
@@ -96,7 +96,7 @@ public class MeetingTimes {
             Meeting last = condenseMeetings.removeLast();
             Meeting current = meetings.get(i);
             if(current.startTime <= last.endTime && current.endTime > last.endTime) {
-                last = last.join(current);
+                last.join(current);
                 condenseMeetings.addLast(last);
             } else if (current.startTime <= last.endTime && current.endTime <= last.endTime) {
                 condenseMeetings.addLast(last);
