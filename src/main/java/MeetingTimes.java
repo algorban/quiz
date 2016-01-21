@@ -45,17 +45,42 @@ public class MeetingTimes {
 
     public static void main(String[] args) {
         List<Meeting> meetingTime = new LinkedList<>();
+        List<Meeting> result = new LinkedList<>();
         MeetingTimes mainClazz = new MeetingTimes();
-        //(1, 10), (2, 6), (3, 5), (7, 9)
+
         //(0, 1), (3, 5), (4, 8), (10, 12), (9, 10)
-        meetingTime.add(mainClazz.new Meeting(0,5));
         meetingTime.add(mainClazz.new Meeting(0,1));
         meetingTime.add(mainClazz.new Meeting(3,5));
         meetingTime.add(mainClazz.new Meeting(4,8));
         meetingTime.add(mainClazz.new Meeting(10,12));
         meetingTime.add(mainClazz.new Meeting(9,10));
-        List<Meeting> result = condenseMeetingTimes(meetingTime);
+        result = condenseMeetingTimes(meetingTime);
         result.forEach((m)->System.out.println(m));
+        System.out.println("******");
+        meetingTime.clear();
+        //(1, 10), (2, 6), (3, 5), (7, 9)
+        meetingTime.add(mainClazz.new Meeting(1,10));
+        meetingTime.add(mainClazz.new Meeting(2,6));
+        meetingTime.add(mainClazz.new Meeting(3,5));
+        meetingTime.add(mainClazz.new Meeting(7,9));
+        result = condenseMeetingTimes(meetingTime);
+        result.forEach((m)->System.out.println(m));
+        System.out.println("******");
+        meetingTime.clear();
+        //(1, 2), (2, 3)
+        meetingTime.add(mainClazz.new Meeting(1,2));
+        meetingTime.add(mainClazz.new Meeting(2,3));
+        result = condenseMeetingTimes(meetingTime);
+        result.forEach((m)->System.out.println(m));
+        System.out.println("******");
+        meetingTime.clear();
+
+        //(1, 5), (2, 3)
+        meetingTime.add(mainClazz.new Meeting(1,5));
+        meetingTime.add(mainClazz.new Meeting(2,3));
+        result = condenseMeetingTimes(meetingTime);
+        result.forEach((m)->System.out.println(m));
+
     }
 
     public static List<Meeting> condenseMeetingTimes(List<Meeting> meetings) {
