@@ -2,6 +2,11 @@ package main.java;
 
 /**
  * Created by root on 1/14/2016.
+ *
+ * find max profit from stock prices.
+ * O(n)
+ *
+ * {10, 7, 5, 8, 11, 9} -> 6 (11-5)
  */
 public class StockPrice {
 
